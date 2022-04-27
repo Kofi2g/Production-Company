@@ -6,23 +6,129 @@
     padding: 0;
 }
 
-.img {
-    background: url(images/genji\ wp.png) no-repeat center;
-    background-size: cover;
-    height: 400px;
-    color: red;
-    font-size: 2rem;
+:root {
+    --font: 'Special Elite', cursive;
+    --font-secondary: 'Antonio', sans-serif;
+
 }
 
-.information {
-    background-color: rgb(45, 45, 45);
+body {
+    background-color: #383636;
+}
+
+ul,
+li,
+a {
+    display: flex;
+    font-size: clamp(1rem, 4vh, 2rem);
+    gap: 1rem;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    color: #ffffff;
+}
+
+ul {
+    margin: 1rem;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font);
+    font-size: clamp(2rem, 9vh, 12rem);
+    background: url(images/genji\ wp.png) no-repeat center;
+    background-size: cover;
+    height: 80vh;
     color: white;
 }
 
-.information:first-child {
-    color red:
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 350vh;
+    grid-template-areas:
+        "one"
+        "two"
+        "three"
+        "four"
+        "five"
+        "six"
+        "seven";
 }
 
-p:nth-child(1) {
-    color: aquamarine;
+
+.one {
+    grid-area: one;
+    background-color: #a10f0f;
 }
+
+.one img {
+ 
+}
+
+.two {
+    grid-area: two;
+    background-color: aqua;
+}
+
+.three {
+    grid-area: three;
+    background-color: bisque;
+}
+
+.four {
+    grid-area: four;
+    background-color: brown;
+}
+
+.five {
+    grid-area: five;
+    background-color: darkcyan;
+}
+
+.six {
+    grid-area: six;
+    background-color: darkgreen;
+}
+
+.seven {
+    grid-area: seven;
+    background-color: chocolate;
+}
+
+
+
+@media screen and (min-width:320px) {
+    .hero {
+        font-size: 6vh;
+    }
+
+    ul {
+        justify-content: center;
+    }
+
+    @media screen and (min-width:576px) {
+        .hero {
+            font-size: clamp(2rem, 9vh, 12rem);
+        }
+    }
+
+    @media screen and (min-width:768px) {}
+
+    @media screen and (min-width:992px) {}
+
+    @media screen and (min-width:1200px) {}
+
+    @media screen and (min-width:1440px) {
+
+        .grid-container {
+            grid-template-columns: repeat(3,1fr);
+            height: 140vh;
+            grid-template-areas:
+                "one two two"
+                "three four five"
+                "six six seven";
+        }
+    }
