@@ -38,6 +38,7 @@ ul {
     align-items: center;
     font-family: var(--font);
     font-size: clamp(2rem, 9vh, 12rem);
+    letter-spacing: 1rem;
     background: url(images/genji\ wp.png) no-repeat center;
     background-size: cover;
     height: 80vh;
@@ -46,6 +47,7 @@ ul {
 
 .grid-container {
     display: grid;
+    /* border: red 2px solid; */
     grid-template-columns: 1fr;
     height: 350vh;
     grid-template-areas:
@@ -58,51 +60,68 @@ ul {
         "seven";
 }
 
+.grid-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
 
 .one {
     grid-area: one;
-    background-color: #a10f0f;
+    /* border: 4px solid red; */
 }
 
-.one img {
- 
-}
 
 .two {
     grid-area: two;
-    background-color: aqua;
+     /* border: 4px solid rgb(157, 255, 0); */
 }
+
+
 
 .three {
     grid-area: three;
-    background-color: bisque;
+     /* border: 4px solid rgb(0, 153, 255); */
 }
 
 .four {
     grid-area: four;
-    background-color: brown;
+     /* border: 4px solid rgb(60, 255, 0); */
 }
 
 .five {
     grid-area: five;
-    background-color: darkcyan;
+     /* border: 4px solid rgb(255, 132, 151); */
 }
 
 .six {
     grid-area: six;
-    background-color: darkgreen;
+     /* border: 4px solid rgb(0, 21, 255); */
 }
 
 .seven {
     grid-area: seven;
-    background-color: chocolate;
+     /* border: 4px solid rgb(255, 255, 255); */
 }
 
+footer {
+    margin-top: 2rem;
+    color: white;
+}
 
 
 @media screen and (min-width:320px) {
     .hero {
         font-size: 6vh;
+    }
+
+    .grid-container {
+        height: 440vh;
     }
 
     ul {
@@ -113,22 +132,57 @@ ul {
         .hero {
             font-size: clamp(2rem, 9vh, 12rem);
         }
-    }
-
-    @media screen and (min-width:768px) {}
-
-    @media screen and (min-width:992px) {}
-
-    @media screen and (min-width:1200px) {}
-
-    @media screen and (min-width:1440px) {
 
         .grid-container {
-            grid-template-columns: repeat(3,1fr);
+            height: 560vh;
+        }
+    }
+
+    @media screen and (min-width:768px) {
+        .grid-container {
+            grid-template-columns: repeat(2, 1fr);
+            height: 400vh;
+            grid-template-areas:
+                "one one"
+                "two three"
+                "four five"
+                "six seven";
+        }
+    }
+
+    @media screen and (min-width:992px) {
+
+        .grid-container {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 1fr 1fr;
             height: 140vh;
             grid-template-areas:
                 "one two two"
                 "three four five"
-                "six six seven";
+                "six six seven"    
+                "six six seven"    
         }
+
+         .six img{
+            object-position: 0 0;
+        } 
+        
+        .grid-container {
+            height: 170vh;
+        }
+
     }
+
+    @media screen and (min-width:1200px) {
+        .grid-container {
+            height: 185vh;
+
+    }
+
+    
+    @media screen and (min-width:1440px) {
+
+        
+    }
+
+}
