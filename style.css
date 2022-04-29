@@ -20,29 +20,44 @@ ul,
 li,
 a {
     display: flex;
-    font-size: clamp(1rem, 4vh, 2rem);
+    font-size: clamp(1rem, 3vh, 2rem);
     gap: 1rem;
     list-style-type: none;
     text-decoration: none;
     font-family: var(--font-secondary);
     color: #ffffff;
+
 }
 
 ul {
     margin: 1rem;
 }
 
+h1 {
+    font-family: var(--font);
+    font-size: clamp(2rem, 9vh, 12rem);
+    letter-spacing: .5rem;
+    color: white;
+}
+
 .hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--font);
-    font-size: clamp(2rem, 9vh, 12rem);
-    letter-spacing: 1rem;
-    background: url(images/genji\ wp.png) no-repeat center;
-    background-size: cover;
+    text-align: center;
+    position: relative;
     height: 80vh;
-    color: white;
+}
+
+.hero video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .grid-container {
@@ -65,7 +80,7 @@ ul {
     height: 100%;
     object-fit: cover;
 }
-video {
+.grid-container video {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -81,6 +96,7 @@ video {
     grid-area: two;
      /* border: 4px solid rgb(157, 255, 0); */
 }
+
 
 
 
@@ -110,7 +126,7 @@ video {
 }
 
 footer {
-    margin-top: 2rem;
+    margin-top: 1rem;
     color: white;
 }
 
@@ -143,8 +159,8 @@ footer {
             grid-template-columns: repeat(2, 1fr);
             height: 400vh;
             grid-template-areas:
-                "one one"
-                "two three"
+                "two two"
+                "one three"
                 "four five"
                 "six seven";
         }
@@ -154,12 +170,11 @@ footer {
 
         .grid-container {
             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-rows: 50vh 60vh 65vh;
             height: 140vh;
             grid-template-areas:
                 "one two two"
                 "three four five"
-                "six six seven"    
                 "six six seven"    
         }
 
@@ -175,8 +190,12 @@ footer {
 
     @media screen and (min-width:1200px) {
         .grid-container {
-            height: 185vh;
+            height: 176vh;           
 
+    }
+
+    ul {
+        justify-content: flex-end;
     }
 
     
