@@ -40,6 +40,10 @@ h1 {
     color: white;
 }
 
+h1:hover {
+    display: none;
+}
+
 .hero {
     display: flex;
     justify-content: center;
@@ -80,49 +84,66 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
+
 .grid-container video {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-.one {
-    grid-area: one;
-    /* border: 4px solid red; */
+.hide {
+    display: none;
+    color: white;
+    font-family: var(--font);
+    z-index: 1;
+    margin: 1rem;
+    font-size: clamp(1rem, 3vh, 2rem);
 }
 
+.highlight:hover .hide {
+    display: flex;
+}
+
+.grid-container:nth-child(odd) img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.highlight {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.one {
+    grid-area: one;
+}
 
 .two {
     grid-area: two;
-     /* border: 4px solid rgb(157, 255, 0); */
 }
-
-
-
 
 .three {
     grid-area: three;
-     /* border: 4px solid rgb(0, 153, 255); */
 }
 
 .four {
     grid-area: four;
-     /* border: 4px solid rgb(60, 255, 0); */
 }
 
 .five {
     grid-area: five;
-     /* border: 4px solid rgb(255, 132, 151); */
 }
 
 .six {
     grid-area: six;
-     /* border: 4px solid rgb(0, 21, 255); */
 }
 
 .seven {
     grid-area: seven;
-     /* border: 4px solid rgb(255, 255, 255); */
 }
 
 footer {
@@ -175,13 +196,13 @@ footer {
             grid-template-areas:
                 "one two two"
                 "three four five"
-                "six six seven"    
+                "six six seven"
         }
 
-         .six img{
+        .six img {
             object-position: 0 0;
-        } 
-        
+        }
+
         .grid-container {
             height: 170vh;
         }
@@ -190,18 +211,15 @@ footer {
 
     @media screen and (min-width:1200px) {
         .grid-container {
-            height: 176vh;           
+            height: 176vh;
+
+        }
+
+        ul {
+            justify-content: flex-end;
+        }
+
+
+        @media screen and (min-width:1440px) {}
 
     }
-
-    ul {
-        justify-content: flex-end;
-    }
-
-    
-    @media screen and (min-width:1440px) {
-
-        
-    }
-
-}
