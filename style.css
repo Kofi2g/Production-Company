@@ -14,43 +14,79 @@
 
 body {
     background-color: #383636;
+    color: #ffffff;
 }
 
-ul,
-li,
-a {
-    display: flex;
-    font-size: clamp(1rem, 3vh, 2rem);
-    gap: 1rem;
-    list-style-type: none;
-    text-decoration: none;
-    font-family: var(--font-secondary);
-    color: #ffffff;
+button {
+    
+    font-size: 2rem;
+}
 
+#open {
+    background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+#close {
+    
+}
+
+#sidebar {
+    position: fixed;
+    /* padding: 2rem; */
+    width: 20%;
+    height: 100%;
+    background-color: rgb(220, 52, 52);
+    z-index: 2;
+    visibility: hidden;
 }
 
 ul {
-    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
 }
+
+a {
+    text-decoration: none;
+    font-size: clamp(1rem, 3vh, 2rem);
+    font-family: var(--font-secondary);
+    color: #ffffff;
+}
+
 
 h1 {
     font-family: var(--font);
     font-size: clamp(2rem, 9vh, 12rem);
     letter-spacing: .5rem;
     color: white;
+    transition: .3s;
 }
 
 h1:hover {
-    display: none;
+    opacity: 0;
 }
 
 .hero {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
     position: relative;
     height: 80vh;
+    text-align: center;
+}
+
+.hero button {
+    align-self: flex-start;
+    position: absolute;
+    left: 0;
+    margin: 0 1rem;
+  
 }
 
 .hero video {
@@ -84,7 +120,6 @@ h1:hover {
     height: 100%;
     object-fit: cover;
 }
-
 .grid-container video {
     object-fit: cover;
     width: 100%;
@@ -92,16 +127,17 @@ h1:hover {
 }
 
 .hide {
-    display: none;
     color: white;
     font-family: var(--font);
     z-index: 1;
     margin: 1rem;
-    font-size: clamp(1rem, 3vh, 2rem);
+    font-size: clamp(1rem,3vh,2rem);
+    transition: .3s;
+    opacity: 0;
 }
 
-.highlight:hover .hide {
-    display: flex;
+.highlight:hover .hide{
+    opacity: 1;
 }
 
 .grid-container:nth-child(odd) img {
@@ -161,10 +197,6 @@ footer {
         height: 440vh;
     }
 
-    ul {
-        justify-content: center;
-    }
-
     @media screen and (min-width:576px) {
         .hero {
             font-size: clamp(2rem, 9vh, 12rem);
@@ -196,13 +228,13 @@ footer {
             grid-template-areas:
                 "one two two"
                 "three four five"
-                "six six seven"
+                "six six seven"    
         }
 
-        .six img {
+         .six img{
             object-position: 0 0;
-        }
-
+        } 
+        
         .grid-container {
             height: 170vh;
         }
@@ -211,15 +243,15 @@ footer {
 
     @media screen and (min-width:1200px) {
         .grid-container {
-            height: 176vh;
-
-        }
-
-        ul {
-            justify-content: flex-end;
-        }
-
-
-        @media screen and (min-width:1440px) {}
+            height: 176vh;           
 
     }
+
+
+    
+    @media screen and (min-width:1440px) {
+
+        
+    }
+
+}
