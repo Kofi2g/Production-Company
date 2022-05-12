@@ -9,39 +9,24 @@
 :root {
     --font: 'Special Elite', cursive;
     --font-secondary: 'Antonio', sans-serif;
+    --white: #ffffff;
 
 }
 
 body {
-    background-color: #383636;
-    color: #ffffff;
+    background-color: rgb(56, 54, 54);
+    color: var(--white);
 }
 
-button {
-    
-    font-size: 2rem;
+h1 {
+    font-family: var(--font);
+    font-size: clamp(2rem, 9vh, 12rem);
+    letter-spacing: .5rem;
+    transition: .3s;
 }
 
-#open {
-    background-color: transparent;
-    background-repeat:no-repeat;
-    border: none;
-    font-weight: 900;
-    color: #ffffff;
-}
-
-#close {
-    
-}
-
-#sidebar {
-    position: fixed;
-    /* padding: 2rem; */
-    width: 20%;
-    height: 100%;
-    background-color: rgb(220, 52, 52);
-    z-index: 2;
-    visibility: hidden;
+h1:hover {
+    opacity: 0;
 }
 
 ul {
@@ -53,23 +38,50 @@ ul {
 }
 
 a {
-    text-decoration: none;
-    font-size: clamp(1rem, 3vh, 2rem);
     font-family: var(--font-secondary);
-    color: #ffffff;
+    font-size: clamp(2.5rem, 6vh, 4rem);
+    color: var(--white);
+    text-decoration: none;
+    transition: .2s ease-in-out;
+}
+
+a:hover {
+    color: red;
+    transform: translate(.3rem, 0);
+}
+
+#open {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--white);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#close {
+    font-family: var(--font-secondary);
+    font-size: clamp(1.8rem, 2.3vh, 4rem);
+    color: var(--white);
+    margin: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 
-h1 {
-    font-family: var(--font);
-    font-size: clamp(2rem, 9vh, 12rem);
-    letter-spacing: .5rem;
-    color: white;
-    transition: .3s;
+#sidebar div:hover {
+    background-color: rgb(73, 71, 71);
 }
 
-h1:hover {
-    opacity: 0;
+#sidebar {
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    background-color: rgb(56, 54, 54);
+    z-index: 2;
+    visibility: hidden;
 }
 
 .hero {
@@ -77,8 +89,8 @@ h1:hover {
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 80vh;
     text-align: center;
+    height: 80vh;
 }
 
 .hero button {
@@ -86,7 +98,6 @@ h1:hover {
     position: absolute;
     left: 0;
     margin: 0 1rem;
-  
 }
 
 .hero video {
@@ -102,7 +113,6 @@ h1:hover {
 
 .grid-container {
     display: grid;
-    /* border: red 2px solid; */
     grid-template-columns: 1fr;
     height: 350vh;
     grid-template-areas:
@@ -120,6 +130,7 @@ h1:hover {
     height: 100%;
     object-fit: cover;
 }
+
 .grid-container video {
     object-fit: cover;
     width: 100%;
@@ -127,16 +138,15 @@ h1:hover {
 }
 
 .hide {
-    color: white;
     font-family: var(--font);
     z-index: 1;
     margin: 1rem;
-    font-size: clamp(1rem,3vh,2rem);
+    font-size: clamp(1rem, 3vh, 2rem);
     transition: .3s;
     opacity: 0;
 }
 
-.highlight:hover .hide{
+.highlight:hover .hide {
     opacity: 1;
 }
 
@@ -183,12 +193,14 @@ h1:hover {
 }
 
 footer {
+    margin: 1rem;
+    font-family: var(--font);
     margin-top: 1rem;
-    color: white;
 }
 
 
 @media screen and (min-width:320px) {
+
     .hero {
         font-size: 6vh;
     }
@@ -197,61 +209,79 @@ footer {
         height: 440vh;
     }
 
-    @media screen and (min-width:576px) {
-        .hero {
-            font-size: clamp(2rem, 9vh, 12rem);
-        }
+    #sidebar {
+        width: 60%
+    }
+}
 
-        .grid-container {
-            height: 560vh;
-        }
+@media screen and (min-width:576px) {
+
+    .hero {
+        font-size: clamp(2rem, 9vh, 12rem);
     }
 
-    @media screen and (min-width:768px) {
-        .grid-container {
-            grid-template-columns: repeat(2, 1fr);
-            height: 400vh;
-            grid-template-areas:
-                "two two"
-                "one three"
-                "four five"
-                "six seven";
-        }
+    .grid-container {
+        height: 560vh;
     }
 
-    @media screen and (min-width:992px) {
+    #sidebar {
+        width: 40%
+    }
+}
 
-        .grid-container {
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 50vh 60vh 65vh;
-            height: 140vh;
-            grid-template-areas:
-                "one two two"
-                "three four five"
-                "six six seven"    
-        }
+@media screen and (min-width:768px) {
 
-         .six img{
-            object-position: 0 0;
-        } 
-        
-        .grid-container {
-            height: 170vh;
-        }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        height: 400vh;
+        grid-template-areas:
+            "two two"
+            "one three"
+            "four five"
+            "six seven";
+    }
+
+    #sidebar {
+        width: 35%
+    }
+}
+
+@media screen and (min-width:992px) {
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 50vh 60vh 65vh;
+        height: 140vh;
+        grid-template-areas:
+            "one two two"
+            "three four five"
+            "six six seven"
+    }
+
+    .six img {
+        object-position: 0 0;
+    }
+
+    .grid-container {
+        height: 170vh;
+    }
+
+    #sidebar {
+        width: 30%
+    }
+
+}
+
+@media screen and (min-width:1200px) {
+    .grid-container {
+        height: 176vh;
 
     }
 
-    @media screen and (min-width:1200px) {
-        .grid-container {
-            height: 176vh;           
-
+    #sidebar {
+        width: 20%
     }
 
-
-    
-    @media screen and (min-width:1440px) {
-
-        
-    }
+    @media screen and (min-width:1440px) {}
 
 }
