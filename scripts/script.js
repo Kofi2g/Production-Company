@@ -2,7 +2,6 @@ const close = document.querySelector("#close");
 const open = document.querySelector("#open");
 const a = document.querySelectorAll("a");
 
-
 close.addEventListener("click", () => {
     sidebar.style.visibility = "hidden";
 
