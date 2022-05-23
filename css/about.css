@@ -78,6 +78,8 @@ a:hover {
     justify-content: center;
     align-items: center;
     height: 80vh;
+    width: 100vw;
+  
 }
 
 .main-section {
@@ -90,6 +92,7 @@ a:hover {
     line-height: 1.5;
     font-size: 1.05rem;
     animation: fadeInAnimation ease 1s;
+    /* border: 2px solid red; */
     /* font-family: var(--font); */
 }
 
@@ -107,4 +110,68 @@ footer {
     font-family: var(--font);
     position:absolute;
     bottom:0;
+}
+
+@media screen and (min-width: 320px) {
+    .main-section {
+
+    height: 40vh;
+    width: 80vw;
+
+    }
+
+    #sidebar {
+        width: 60%
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .main-section {
+
+    height: 40vh;
+    width: 60vw;
+
+    }
+
+    #sidebar {
+        width: 40%
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .main-section {
+
+    height: 40vh;
+    width: 40vw;
+
+    }
+
+    #sidebar {
+        width: 35%
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main-section {
+
+    height: 40vh;
+    width: 30vw;
+
+    }
+
+    #sidebar {
+        width: 30%
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .main-section {
+
+    height: 40vh;
+    width: 24vw;
+
+    }
+    #sidebar {
+        width: 20%
+    }
 }
