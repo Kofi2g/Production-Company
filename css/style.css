@@ -46,7 +46,7 @@ a {
 }
 
 a:hover {
-    color: red;
+    color: rgb(13, 255, 0);
     transform: translate(.3rem, 0);
 }
 
