@@ -4,6 +4,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 
 :root {
@@ -28,13 +29,17 @@ h1 {
 h1:hover {
     opacity: 0;
 }
+/* NAV START */
 
 ul {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
+    align-self: flex-end;
+    background-color: rgb(22, 22, 22, 0);
+    width: 100%;
+    z-index: 2;
+    gap: 1rem;
+    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.1); */
+    padding: 0 1rem;
 }
 
 a {
@@ -42,74 +47,36 @@ a {
     font-size: clamp(2.5rem, 6vh, 4rem);
     color: var(--white);
     text-decoration: none;
+    opacity: .3;
     transition: .2s ease-in-out;
 }
 
 a:hover {
-    color: rgb(13, 255, 0);
+    opacity: 1;
+    color: rgb(255, 255, 255);
     transform: translate(.3rem, 0);
 }
 
-#open {
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--white);
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin-left: 1rem;
-}
-
-#close {
-    font-family: var(--font-secondary);
-    font-size: clamp(1.8rem, 2.3vh, 4rem);
-    color: var(--white);
-    margin: 1rem;
-    margin-bottom: 2rem;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-
-#sidebar div:hover {
-    background-color: rgb(32, 32, 32);
-}
-
-#sidebar {
-    position: fixed;
-    width: 20%;
-    height: 100%;
-    background-color: rgb(22, 22, 22);
-    z-index: 2;
-    visibility: hidden;
-}
+/* NAV END*/
 
 .hero {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     position: relative;
     text-align: center;
     height: 80vh;
 }
 
-.hero button {
-    align-self: flex-start;
-    position: absolute;
-    left: 0;
-    margin: 0 1rem;
-}
-
 .hero video {
-    object-fit: cover;
+    object-fit: none;
     width: 100%;
     height: 100%;
     z-index: -1;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    margin: auto;
+    position: absolute;
 }
 
 .grid-container {
@@ -209,10 +176,6 @@ footer {
     .grid-container {
         height: 440vh;
     }
-
-    #sidebar {
-        width: 60%
-    }
 }
 
 @media screen and (min-width:576px) {
@@ -223,10 +186,6 @@ footer {
 
     .grid-container {
         height: 560vh;
-    }
-
-    #sidebar {
-        width: 40%
     }
 }
 
@@ -240,10 +199,6 @@ footer {
             "one three"
             "four five"
             "six seven";
-    }
-
-    #sidebar {
-        width: 35%
     }
 }
 
@@ -266,11 +221,6 @@ footer {
     .grid-container {
         height: 170vh;
     }
-
-    #sidebar {
-        width: 30%
-    }
-
 }
 
 @media screen and (min-width:1200px) {
@@ -279,9 +229,6 @@ footer {
 
     }
 
-    #sidebar {
-        width: 20%
-    }
 
     @media screen and (min-width:1440px) {}
 
