@@ -7,48 +7,41 @@
     list-style-type: none;
 }
 
-:root {
-    --font: 'Special Elite', cursive;
-    --font-secondary: 'Antonio', sans-serif;
-    --white: #ffffff;
+@font-face {
+    font-family: 'Koulen';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/koulen-v25-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/koulen-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/koulen-v25-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/koulen-v25-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/koulen-v25-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/koulen-v25-latin-regular.svg#Koulen') format('svg'); /* Legacy iOS */
+  }
 
+:root {
+    /* --font-primary: 'Koulen', cursive; */
+    --font-tertiary: 'Special Elite', cursive;
+    --white: #ffffff;
 }
 
 body {
     background-color: rgb(22, 22, 22);
     color: var(--white);
-}
-
-h1 {
-    font-family: var(--font);
-    font-size: clamp(2rem, 9vh, 12rem);
-    letter-spacing: .5rem;
-    transition: .3s;
-}
-h1:hover {
-    opacity: 0;
+    
 }
 
 /* NAV START */
 
-ul {
-    display: flex;
-    align-self: flex-end;
-    background-color: rgb(22, 22, 22, 0);
-    width: 100%;
-    z-index: 2;
-    gap: 1rem;
-    /* box-shadow: 0 3px 10px rgb(0 0 0 / 0.1); */
-    padding: 0 1rem;
-}
-
 a {
-    font-family: var(--font-secondary);
+    font-family: "Koulen", sans-serif;
     font-size: clamp(2.5rem, 6vh, 4rem);
     color: var(--white);
     text-decoration: none;
     opacity: .7;
     transition: .2s ease-in-out;
+    
 }
 
 a:hover {
@@ -59,6 +52,7 @@ a:hover {
 
 li {
     transition: .2s ease-in-out;
+    
 }
 
 li:hover {
@@ -69,9 +63,6 @@ li:hover {
 
 /* HERO START */
 .hero {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     position: relative;
     text-align: center;
     height: 80vh;
@@ -120,7 +111,7 @@ li:hover {
 }
 
 .hide {
-    font-family: var(--font);
+    font-family: "koulen";
     z-index: 1;
     margin: 1rem;
     font-size: clamp(1rem, 3vh, 2rem);
@@ -193,6 +184,13 @@ footer {
 
 @media screen and (min-width:576px) {
 
+    ul {
+        display: flex;
+        gap: 1rem;
+        padding: 0 1rem;
+        justify-content: center;
+    }
+
     .hero {
         font-size: clamp(2rem, 9vh, 12rem);
     }
@@ -216,6 +214,11 @@ footer {
 }
 
 @media screen and (min-width:992px) {
+
+    ul {
+        justify-content: flex-start;
+    }
+    
 
     .grid-container {
         grid-template-columns: repeat(3, 1fr);
