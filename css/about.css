@@ -4,13 +4,27 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    list-style-type: none;
 }
 
-:root {
-    --font: 'Special Elite', cursive;
-    --font-secondary: 'Antonio', sans-serif;
-    --white: #ffffff;
+@font-face {
+    font-family: 'Koulen';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/koulen-v25-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('../fonts/koulen-v25-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/koulen-v25-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/koulen-v25-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/koulen-v25-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/koulen-v25-latin-regular.svg#Koulen') format('svg'); /* Legacy iOS */
+  }
 
+:root {
+    --font-primary: 'Koulen', cursive;
+    --font-secondary: 'Antonio', sans-serif;
+    --font-tertiary: 'Special Elite', cursive;
+    --white: #ffffff;
 }
 
 body {
@@ -18,60 +32,31 @@ body {
     color: var(--white);
 }
 
-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-}
+/* NAV START */
 
 a {
-    font-family: var(--font-secondary);
+    font-family: "koulen";
     font-size: clamp(2.5rem, 6vh, 4rem);
     color: var(--white);
     text-decoration: none;
+    opacity: .7;
     transition: .2s ease-in-out;
 }
 
 a:hover {
-    color: red;
+    opacity: 1;
+    color: rgb(255, 255, 255);
     transform: translate(.3rem, 0);
 }
 
-#open {
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--white);
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    margin-left: 1rem;
+li {
+    transition: .2s ease-in-out;
 }
 
-#close {
-    font-family: var(--font-secondary);
-    font-size: clamp(1.8rem, 2.3vh, 4rem);
-    color: var(--white);
-    margin: 1rem;
-    margin-bottom: 2rem;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+li:hover {
+    transform: translate(.2rem, 0);
 }
-
-#sidebar div:hover {
-    background-color: rgb(32, 32, 32);
-}
-
-#sidebar {
-    position: fixed;
-    width: 20%;
-    height: 100%;
-    background-color: rgb(22, 22, 22);
-    z-index: 1;
-    visibility: hidden;
-}
+/* NAV END */
 
 .main-container {
     display: flex;
@@ -108,46 +93,46 @@ a:hover {
 footer {
     margin: 1rem;
     font-family: var(--font);
-    position:absolute;
-    bottom:0;
 }
 
 @media screen and (min-width: 320px) {
-    .main-section {
 
-    height: 40vh;
-    width: 80vw;
-
+    ul {
+        text-align: center;
     }
 
-    #sidebar {
-        width: 60%
+    .main-section {
+    height: 40vh;
+    width: 80vw;
     }
 }
 
 @media screen and (min-width: 576px) {
-    .main-section {
 
+    ul {
+        display: flex;
+        gap: 1rem;
+        padding: 0 1rem;
+        justify-content: center;
+    }
+
+    .main-section {
     height: 40vh;
     width: 60vw;
-
     }
 
-    #sidebar {
-        width: 40%
-    }
 }
 
 @media screen and (min-width: 768px) {
-    .main-section {
 
+    ul {
+        justify-content: flex-start;
+    }
+
+    .main-section {
     height: 40vh;
     width: 40vw;
 
-    }
-
-    #sidebar {
-        width: 35%
     }
 }
 
@@ -158,10 +143,6 @@ footer {
     width: 30vw;
 
     }
-
-    #sidebar {
-        width: 30%
-    }
 }
 
 @media screen and (min-width: 1440px) {
@@ -170,8 +151,5 @@ footer {
     height: 40vh;
     width: 24vw;
 
-    }
-    #sidebar {
-        width: 20%
     }
 }
