@@ -81,6 +81,11 @@ li:hover {
     /* font-family: var(--font); */
 }
 
+footer {
+    margin: 1rem;
+    font-family: var(--font);
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -90,10 +95,6 @@ li:hover {
     }
 }
 
-footer {
-    margin: 1rem;
-    font-family: var(--font);
-}
 
 @media screen and (min-width: 320px) {
 

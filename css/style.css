@@ -110,6 +110,10 @@ li:hover {
     color: black;
 }
 
+.grid-container div:first-child {
+    color: white;
+}
+
 .hide {
     font-family: "koulen";
     z-index: 1;
@@ -179,6 +183,10 @@ footer {
 
     .grid-container {
         height: 440vh;
+    }
+
+    ul {
+       padding-top: 2rem;
     }
 }
 
