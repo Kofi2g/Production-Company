@@ -39,7 +39,7 @@ a {
     font-size: clamp(2.5rem, 6vh, 4rem);
     color: var(--white);
     text-decoration: none;
-    opacity: .7;
+    opacity: .3;
     transition: .2s ease-in-out;
     
 }
