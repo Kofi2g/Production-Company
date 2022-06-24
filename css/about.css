@@ -64,13 +64,11 @@ li:hover {
     align-items: center;
     height: 80vh;
     width: 100vw;
-  
+    /* border: 2px solid red; */
 }
 
 .main-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
     width: 24vw;
     height: 40vh;
     padding: 1rem;
@@ -80,6 +78,8 @@ li:hover {
     /* border: 2px solid red; */
     /* font-family: var(--font); */
 }
+
+
 
 footer {
     margin: 1rem;
@@ -95,10 +95,9 @@ footer {
     }
 }
 
-
 @media screen and (min-width: 320px) {
 
-    ul {
+    .nav-bar {
         text-align: center;
     }
 
@@ -110,7 +109,7 @@ footer {
 
 @media screen and (min-width: 576px) {
 
-    ul {
+    .nav-bar {
         display: flex;
         gap: 1rem;
         padding: 0 1rem;
@@ -126,7 +125,7 @@ footer {
 
 @media screen and (min-width: 768px) {
 
-    ul {
+    .nav-bar {
         justify-content: flex-start;
     }
 
